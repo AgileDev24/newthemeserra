@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<!-- BEGIN GLOBAL MANDATORY STYLES -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link href="./assets_new/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="./assets_new/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css">
+
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+	<!-- <link href="./assets_new/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+	<link href="./assets_new/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
+	<!-- END GLOBAL MANDATORY STYLES -->
+
+	<link rel="stylesheet" type="text/css" href="./assets_new/global/plugins/jstree/dist/themes/default/style.min.css"/>
+	<link href="./assets_new/global/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet"/>
+
+	<!-- BEGIN THEME STYLES -->
+	<link href="./assets_new/global/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css">
+	<link href="./assets_new/global/css/plugins.css" rel="stylesheet" type="text/css">
+	<link href="./assets_new/css/layout.css" rel="stylesheet" type="text/css">
+	<link href="./assets_new/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color">
+	<link href="./assets_new/css/custom.css" rel="stylesheet" type="text/css">
+
+	<script src="./assets_new/global/plugins/jquery.min.js" type="text/javascript"></script>
+	<script src="./assets_new/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+	<!-- END THEME STYLES -->
+</head>
+<body>
+	<div class="container-fluid container-home">
+	    <div class="row">
+	        <div class="col-md-12">
+	            <div class="card search-field mb-3 mt-3">
+	                <div class="row">
+	                    <div class="col-md-6">
+	                    <span class="bold">REFINE RESULTS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+	                    <button class="btn btn-primary btn-round mgl-15"><i class="fas fa-filter"></i></button>
+	                    <span>GROUP FILTER</span>
+	                    <select class="form-select" name="GroupFilter" id="GroupFilter">
+	                        <option value="E-Entire">Entire Community</option>
+	                        <option value="A-AllMine">All Mine</option>
+	                        <option value="33849-ARC Committee">Personal</option>
+	                        <option value="7571-Board Members 4">ARC Committee</option>
+	                        <option value="90457-Fitness Center">Board Members 4</option>
+	                        <option value="46571-Landscape Committee">Fitness Center</option>
+	                        <option value="86376-Owners">Landscape Committee</option>
+	                        <option value="11572-Pool Project">Owners</option>
+	                        <option value="10129-Site Administrators">Pool Project</option>
+	                        <option value="85857-Steve">Site Administrators</option>
+	                        <option value="82773-Tennis Club">Steve's Group</option>
+	                        <option value="12788-Tennis">Tennis Club</option>
+	                    </select>
+	                    </div>
+	                    <div class="col-md-6">
+	                    <button class="btn btn-primary btn-round mgl-15"><i class="fas fa-search"></i></button>
+	                    <span class="bold">SEARCH:</span>
+	                    <div class="input-group">
+	                        <select class="form-select" id="SearchType">
+	                            <option value="2">All</option>
+	                            <option value="3">Links</option>
+	                            <option value="3">Community News</option>
+	                            <option value="3">Documents</option>
+	                            <option value="3">Events</option>
+	                            <option value="3">eForms</option>
+	                        </select>
+	                        <input id="SearchText" type="text" class="form-control" placeholder="Search..." />
+	                    </div>
+	                    <button class="btn btn-primary pdlr-30 mgl-15" id="btn-search">GO</button>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+
+
+		<div class="row">
+			<div class="col-md-6">
+				<div class="portlet light container-account-info">
+					<div class="portlet-title">
+						<div class="caption">
+							<i class="fa fa-cogs font-green-sharp"></i>
+							<span class="caption-subject font-green-sharp bold uppercase">Account information</span>
+						</div>
+<!-- 						<div class="tools">
+							<a href="javascript:;" class="collapse">
+							</a>
+						</div> -->
+					</div>
+					<div class="portlet-body">
+						<div class="row align-items-center">
+							<div class="col-md-4 col-sm-4 col-4 statistic-label partial-border-right">
+								<div class="row align-items-center">
+									<div class="col-md-4 col-sm-4 col-4">
+										<i class="fas fa-hashtag circle-icon"></i>
+									</div>
+									<div class="col-md-8 col-sm-8 col-8">
+										<label class="statistic-title">Account number</label><br>
+										<label class="statistic-value">4946</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4 col-4 statistic-label partial-border-right">
+								<div class="row align-items-center">
+									<div class="col-md-4 col-sm-4 col-4">
+										<i class="fas fa-map-marker-alt circle-icon"></i>
+									</div>
+									<div class="col-md-8 col-sm-8 col-8">
+										<label class="statistic-title">Property Address</label><br>
+										<label class="statistic-value">2372 E Elmwood PI</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4 col-4 statistic-label">
+								<div class="row align-items-center">
+									<div class="col-md-4 col-sm-4 col-4">
+										<i class="fas fa-toggle-on circle-icon"></i>
+									</div>
+									<div class="col-md-8 col-sm-8 col-8">
+										<label class="statistic-title">Status</label><br>
+										<label class="statistic-value">Current</label>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-4 col-sm-4 col-4"><hr></div>
+							<div class="col-md-4 col-sm-4 col-4"><hr></div>
+							<div class="col-md-4 col-sm-4 col-4"><hr></div>
+
+							<div class="col-md-4 col-sm-4 col-4 statistic-label partial-border-right">
+								<div class="row align-items-center">
+									<div class="col-md-4 col-sm-4 col-4">
+										<i class="fas fa-calendar-day circle-icon"></i>
+									</div>
+									<div class="col-md-8 col-sm-8 col-8">
+										<label class="statistic-title">Last payment date</label><br>
+										<label class="statistic-value">02/18/2021</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4 col-4 statistic-label partial-border-right">
+								<div class="row align-items-center">
+									<div class="col-md-4 col-sm-4 col-4">
+										<i class="fas fa-money-bill-alt circle-icon"></i>
+									</div>
+									<div class="col-md-8 col-sm-8 col-8">
+										<label class="statistic-title">Last payment amount</label><br>
+										<label class="statistic-value">$1.00</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4 col-4 statistic-label">
+								<div class="row align-items-center">
+									<div class="col-md-4 col-sm-4 col-4">
+										<i class="fas fa-dollar-sign circle-icon"></i>
+									</div>
+									<div class="col-md-8 col-sm-8 col-8">
+										<label class="statistic-title">Current balance due:</label><br>
+										<label class="statistic-value">$4946.22</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pull-center">
+							<a class="btn btn-secondary">View Account detail</a>
+							<a class="btn btn-success">pay now</a>
+						</div>
+						<div class="pull-center message">
+							This is a payment info message
+						</div>
+                    <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
+                        <div class="col">
+                        	<a href="umanACCPlanList.asp">
+	                            <div class="tac block-card">
+	                                <p class="block-card-title">Architecturals</p>
+	                                <p class="block-card-number">97</p>
+	                                <p class="block-card-content">View and Add ARC Committee</p>
+	                            </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                        	<a href="umanPassList.asp">
+	                            <div class="tac block-card">
+	                                <p class="block-card-title">Passes</p>
+	                                <p class="block-card-number">15</p>
+	                                <p class="block-card-content">View Open Passes</p>
+	                            </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                        	<a href="ResidentRequestList.asp?req=O">
+	                            <div class="tac block-card">
+	                                <p class="block-card-title">Requests</p>
+	                                <p class="block-card-number">93</p>
+	                                <p class="block-card-content">View and Add Resident Request</p>
+	                            </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                        	<a href="umanViolationList.asp">
+	                            <div class="tac block-card">
+	                                <p class="block-card-title">Violations</p>
+	                                <p class="block-card-number">15</p>
+	                                <p class="block-card-content">View and Open Closed Violations</p>
+	                            </div>
+	                        </a>
+                        </div>
+                        <div class="col">
+                        	<a href="umanVisitorList.asp">
+	                            <div class="tac block-card">
+	                                <p class="block-card-title">Visitors</p>
+	                                <p class="block-card-number">08</p>
+	                                <p class="block-card-content">View and Add Visitors</p>
+	                            </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                        	<a href="umanWorkOrderList.asp">
+	                            <div class="tac block-card">
+	                                <p class="block-card-title">Work Orders</p>
+	                                <p class="block-card-number">97</p>
+	                                <p class="block-card-content">View Open and Closed Work Orders</p>
+	                            </div>
+                            </a>
+                        </div>
+                    </div>
+					</div>
+				</div>
+
+				<div class="portlet light container-announcement">
+					<div class="portlet-title">
+						<div class="caption">
+							<i class="fa fa-cogs font-green-sharp"></i>
+							<span class="caption-subject font-green-sharp bold uppercase">Diamond by POA</span>
+						</div>
+					</div>
+					<div class="portlet-body">
+						<div class="row">
+							<div class="col-md-4 col-sm-4 col-4 statistic-label partial-border-right">
+								<div class="row align-items-center">
+									<div class="col-md-4 col-sm-4 col-4">
+										<i class="fas fa-hashtag circle-icon"></i>
+									</div>
+									<div class="col-md-8 col-sm-8 col-8">
+										<label class="statistic-title">Account number</label><br>
+										<label class="statistic-value">4946</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4 col-4 statistic-label partial-border-right">
+								<div class="row align-items-center">
+									<div class="col-md-4 col-sm-4 col-4">
+										<i class="fas fa-map-marker-alt circle-icon"></i>
+									</div>
+									<div class="col-md-8 col-sm-8 col-8">
+										<label class="statistic-title">Property Address</label><br>
+										<label class="statistic-value">2372 E Elmwood PI</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4 col-4 statistic-label">
+								<div class="row align-items-center">
+									<div class="col-md-4 col-sm-4 col-4">
+										<i class="fas fa-toggle-on circle-icon"></i>
+									</div>
+									<div class="col-md-8 col-sm-8 col-8">
+										<label class="statistic-title">Status</label><br>
+										<label class="statistic-value">Current</label>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-4 col-sm-4 col-4"><hr></div>
+							<div class="col-md-4 col-sm-4 col-4"><hr></div>
+							<div class="col-md-4 col-sm-4 col-4"><hr></div>
+
+							<div class="col-md-4 col-sm-4 col-4 statistic-label partial-border-right">
+								<div class="row align-items-center">
+									<div class="col-md-4 col-sm-4 col-4">
+										<i class="fas fa-calendar-day circle-icon"></i>
+									</div>
+									<div class="col-md-8 col-sm-8 col-8">
+										<label class="statistic-title">Last payment date</label><br>
+										<label class="statistic-value">02/18/2021</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4 col-4 statistic-label partial-border-right">
+								<div class="row align-items-center">
+									<div class="col-md-4 col-sm-4 col-4">
+										<i class="fas fa-money-bill-alt circle-icon"></i>
+									</div>
+									<div class="col-md-8 col-sm-8 col-8">
+										<label class="statistic-title">Last payment amount</label><br>
+										<label class="statistic-value">$1.00</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4 col-4 statistic-label">
+								<div class="row align-items-center">
+									<div class="col-md-4 col-sm-4 col-4">
+										<i class="fas fa-dollar-sign circle-icon"></i>
+									</div>
+									<div class="col-md-8 col-sm-8 col-8">
+										<label class="statistic-title">Current balance due:</label><br>
+										<label class="statistic-value">$4946.22</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="portlet light calendar">
+					<div class="portlet-title">
+						<div class="caption">
+							<i class="fa fa-gift"></i>Calendar
+						</div>
+					</div>
+					<div class="portlet-body">
+						<div class="row">
+							<div id="calendar" class="has-toolbar">
+							</div>
+						</div>
+						<!-- END CALENDAR PORTLET-->
+					</div>
+				</div>
+
+				<div class="portlet light container-surveys">
+					<div class="portlet-title">
+						<div class="caption">
+							<i class="fa fa-cogs font-green-sharp"></i>
+							<span class="caption-subject font-green-sharp bold uppercase">Surveys</span>
+						</div>
+					</div>
+					<div class="portlet-body">
+						<div class="surveys-no-vote">
+							<div class="group">
+							    <div class="item text">Surveys in which you have not yet voted:</div>
+							    <div class="item line"></div>
+							</div>
+							<p>&gt; &nbsp;&nbsp;<a href="javascript:TINY.box.show({iframe:'SlideShowDisplay.asp?modal=Y&pkid=60',width:500,height:400})" class="SectionBodyLink">Test 1&nbsp;<i fa fa-barcode></i></a></p>
+							<p>&gt; &nbsp;&nbsp;<a href="javascript:TINY.box.show({iframe:'SlideShowDisplay.asp?modal=Y&pkid=60',width:500,height:400})" class="SectionBodyLink">Test 2&nbsp;<i fa fa-barcode></i></a></p>
+							<p>&gt; &nbsp;&nbsp;<a href="javascript:TINY.box.show({iframe:'SlideShowDisplay.asp?modal=Y&pkid=60',width:500,height:400})" class="SectionBodyLink">Test 3&nbsp;<i fa fa-barcode></i></a></p>
+						</div>
+						<div class="surveys-vote">
+							<div class="group">
+							    <div class="item text">Surveys in which you have already voted:</div>
+							    <div class="item line"></div>
+							</div>
+							<p>&gt; &nbsp;&nbsp;<a href="javascript:TINY.box.show({iframe:'SlideShowDisplay.asp?modal=Y&pkid=60',width:500,height:400})" class="SectionBodyLink">Test 1&nbsp;<i fa fa-barcode></i></a></p>
+							<p>&gt; &nbsp;&nbsp;<a href="javascript:TINY.box.show({iframe:'SlideShowDisplay.asp?modal=Y&pkid=60',width:500,height:400})" class="SectionBodyLink">Test 2&nbsp;<i fa fa-barcode></i></a></p>
+							<p>&gt; &nbsp;&nbsp;<a href="javascript:TINY.box.show({iframe:'SlideShowDisplay.asp?modal=Y&pkid=60',width:500,height:400})" class="SectionBodyLink">Test 3&nbsp;<i fa fa-barcode></i></a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="portlet light container-diamond">
+					<div class="portlet-title">
+						<div class="caption">
+							<i class="fa fa-cogs font-green-sharp"></i>
+							<span class="caption-subject font-green-sharp bold uppercase">Community News</span>
+						</div>
+<!-- 						<div class="tools">
+							<a href="javascript:;" class="btn-plus" title="Add News"></a>
+							<a href="javascript:;" class="collapse">
+							</a>
+						</div> -->
+					</div>
+					<div class="portlet-body">
+						<div class="news-title">
+							<i class="fa fa-bullhorn"></i>PresidentMessage
+						</div>
+						<div class="news-content row">
+							<div class="col-md-2 quote"><i class="fa fa-quote-left"></i></div>
+							<div class="col-md-10">Thank you everyone for helping to maintain our community.  With the recent rains, we ask that everyone take a few minutes to pull any weeds that may have sprouted up.</div>							
+						</div>
+						<div class="news-footer">DIAMOND BAY</div>
+					</div>
+				</div>
+
+				<div class="portlet light container-whatsnew">
+					<div class="portlet-title">
+						<div class="caption">
+							<i class="fa fa-cogs font-green-sharp"></i>
+							<span class="caption-subject font-green-sharp bold uppercase">What's new</span>
+						</div>
+					</div>
+					<div class="portlet-body">
+						<div class="periods row">
+							<span class="form-label font-16 pull-left col-md-7">Show items added in the last</span>
+							<span class="pull-right col-md-5">
+								<input class="form-control" type="number" value="0" name="WhatsNewDays" size="2" maxlength="2" value="0" onchange="javascript:validateWhatsNewDays(this.form)" )="">&nbsp;&nbsp;Days&nbsp;&nbsp;
+								<a href="" class="btn btn-primary">GO</a>								
+							</span>
+						</div>
+						<div class="whatsnew">
+							<h4>Discussion</h4>
+							<p>&gt; &nbsp;&nbsp;<a href="TopicList.asp?forum=1223&amp;forumname=Pub Group Forum" class="SectionBodyLink">Pub Group Forum</a></p>
+						</div>
+						<div class="last-login"><i class="fas fa-clock"></i> You last logged in on 03/12/2021 at 10:34 AM</div>
+					</div>
+				</div>
+
+				<div class="portlet light container-links">
+					<div class="portlet-title">
+						<div class="caption">
+							<i class="fa fa-cogs font-green-sharp"></i>
+							<span class="caption-subject font-green-sharp bold uppercase">Links</span>
+						</div>
+					</div>
+					<div class="portlet-body">
+						<div class="group">
+						    <div class="item text">All</div>
+						    <div class="item line"></div>
+						</div>
+						<p>
+							<i class="fas fa-link"></i><a href="ResidentRequestEdit.asp?modal=N&amp;durl=ResidentRequestList.asp" target="Body" class="SectionBodyLink"> uMan Res Request</a>							
+						</p>
+						<p class="link-desc">Click this link to add a new resident request to the management company</p>
+
+						<div class="group">
+						    <div class="item text">Misc</div>
+						    <div class="item line"></div>
+						</div>
+						<p>
+							<i class="fas fa-link"></i><a href="FindPetStart.asp" target="Body" class="SectionBodyLink"> Find Pets</a>
+							<i class="fas fa-link"></i><a href="https://www.eunify.net/New/Pay.aspx" target="Body" class="SectionBodyLink"> Make eUnify Payment</a>
+							<i class="fas fa-link"></i><a href="http://" target="_nwin" class="SectionBodyLink"> Weather</a>
+						</p>
+
+						<div class="group">
+						    <div class="item text">Restaurant</div>
+						    <div class="item line"></div>
+						</div>
+						<p>
+							<i class="fas fa-link"></i><a href="FindPetStart.asp" target="Body" class="SectionBodyLink">St Amand Kitchen and Coctails  </a>
+						</p>
+
+					</div>
+				</div>
+
+				<div class="portlet light container-document">
+					<div class="portlet-title">
+						<div class="caption">
+							<i class="fa fa-cogs font-green-sharp"></i>
+							<span class="caption-subject font-green-sharp bold uppercase">Documents</span>
+						</div>
+					</div>
+					<div class="portlet-body">
+						<table cellspacing="0" cellpadding="5" width="100%" class="Home">
+							<tbody>
+								<tr class="SectionBodyBackground">
+									<td colspan="2"><br>
+										<div style="display: block;" id="Sec_6">
+											<table cellspacing="1" cellpadding="1" width="100%" border="0"><tbody><tr><td colspan="2"><img src="images/ico_tick.gif" border="0">&nbsp;<a href="DocumentDisplay.asp?pkid=146907&amp;community=4418&amp;rec=Y" class="SectionBodyLink"><font size="-1">Board Only Document</font></a><font size="-1">&nbsp;<span class="SectionBodyHint"><br><table bgcolor="#EAEAEA" class="ViewDoc" width="95%" align="center"><tbody><tr><td></td></tr></tbody></table></span></font></td></tr></tbody></table>
+											<table border="0" width="100%">
+												<tbody>
+													<tr>
+														<td>
+															<script src="treeview/ua.js"></script>
+															<script src="treeview/ftiens4.js"></script>
+
+
+															<script language="javascript">
+																<!--
+																ICONPATH = "treeviewflat/"
+																STARTALLOPEN = 0
+																BUILDALL = 0
+																GLOBALTARGET = "S"
+																PRESERVESTATE = 1
+																USETEXTLINKS = 1
+																HIGHLIGHT = 0
+																f11 = gFld('aNewSAS', '')
+																f11.xID = 265257
+																f11.addChildren([])
+																f1211 = gFld('2017', '')
+																f1211.xID = 235358
+																f1211.addChildren([])
+																f1212 = gFld('2018', '')
+																f1212.xID = 235357
+																f1212.addChildren([['April 2018 Report', 'DocumentDisplay.asp?x=2&durl=Home.asp&pkid=211702&Community=4418&rec=Y']])
+																f1212.children[0].xID = 211702
+																f1213 = gFld('May 2016', '')
+																f1213.xID = 217994
+																f1213.addChildren([])
+																f121 = gFld('Management Reports', '')
+																f121.xID = 217993
+																f121.addChildren([f1211, f1212, f1213])
+																f122 = gFld('Notes', '')
+																f122.xID = 197889
+																f122.addChildren([])
+																f12 = gFld('Board of Directors', '')
+																f12.xID = 197427
+																f12.addChildren([f121, f122, ['Board Only', 'DocumentDisplay.asp?x=2&durl=Home.asp&pkid=146917&Community=4418&rec=Y']])
+																f12.children[2].xID = 146917
+																f13 = gFld('Master Assoc', '')
+																f13.xID = 235254
+																f13.addChildren([])
+																f1411 = gFld('Feb', '')
+																f1411.xID = 202781
+																f1411.addChildren([])
+																f1412 = gFld('Jan', '')
+																f1412.xID = 202780
+																f1412.addChildren([])
+																f1413 = gFld('mar', '')
+																f1413.xID = 209787
+																f1413.addChildren([['Newsletter April 2015', 'DocumentDisplay.asp?x=2&durl=Home.asp&pkid=49492&Community=4418&rec=Y']])
+																f1413.children[0].xID = 49492
+																f141 = gFld('2015', '')
+																f141.xID = 202779
+																f141.addChildren([f1411, f1412, f1413])
+																f142 = gFld('Landscaping Committee', '')
+																f142.xID = 235395
+																f142.addChildren([])
+																f14 = gFld('Meeting Minutes', '')
+																f14.xID = 197429
+																f14.addChildren([f141, f142, ['May 2017 Minutes', 'DocumentDisplay.asp?x=2&durl=Home.asp&pkid=175704&Community=4418&rec=Y']])
+																f14.children[2].xID = 175704
+																f15 = gFld('Newsletters', '')
+																f15.xID = 197428
+																f15.addChildren([])
+																f16 = gFld('October 2020', '')
+																f16.xID = 282061
+																f16.addChildren([['Test Doc 2', 'DocumentDisplay.asp?x=2&durl=Home.asp&pkid=523520&Community=4418&rec=Y']])
+																f16.children[0].xID = 523520
+																f17 = gFld('Portal Financials', '')
+																f17.xID = 215504
+																f17.addChildren([['Fin Doc', 'DocumentDisplay.asp?x=2&durl=Home.asp&pkid=300376&Community=4418&rec=Y']])
+																f17.children[0].xID = 300376
+																f18 = gFld('September 2020', '')
+																f18.xID = 279746
+																f18.addChildren([])
+																f19 = gFld('September 2020 2', '')
+																f19.xID = 279748
+																f19.addChildren([])
+																f110 = gFld('Sub 1', '')
+																f110.xID = 235255
+																f110.addChildren([])
+																f1 = gFld('Main', '')
+																f1.xID = 196699
+																f1.addChildren([f11, f12, f13, f14, f15, f16, f17, f18, f19, f110, ['Test Pound', 'DocumentDisplay.asp?x=2&durl=Home.asp&pkid=500895&Community=4418&rec=Y'], ['CIT Property Pay Benefits', 'DocumentDisplay.asp?x=2&durl=Home.asp&pkid=512523&master=Y&Community=4418&rec=Y'], ['Test Title', 'DocumentDisplay.asp?x=2&durl=Home.asp&pkid=500991&Community=4418&rec=Y'], ['testToday', 'DocumentDisplay.asp?x=2&durl=Home.asp&pkid=496564&Community=4418&rec=Y'], ['TEST', 'DocumentDisplay.asp?x=2&durl=Home.asp&pkid=495533&Community=4418&rec=Y'], ['TEST', 'DocumentDisplay.asp?x=2&durl=Home.asp&pkid=494252&Community=4418&rec=Y'], ['Doc from Jack', 'DocumentDisplay.asp?x=2&durl=Home.asp&pkid=343166&Community=4418&rec=Y'], ['ACH File Specs', 'DocumentDisplay.asp?x=2&durl=Home.asp&pkid=327157&Community=4418&rec=Y'], ['Board Only Document', 'DocumentDisplay.asp?x=2&durl=Home.asp&pkid=146907&Community=4418&rec=Y'], ['Account Past Due', 'DocumentDisplay.asp?x=2&durl=Home.asp&pkid=120145&Community=4418&rec=Y'], ['Clubhouse Rental Rules', 'DocumentDisplay.asp?x=2&durl=Home.asp&pkid=59436&Community=4418&rec=Y']])
+																f1.children[10].xID = 500895
+																f1.children[11].xID = 512523
+																f1.children[12].xID = 500991
+																f1.children[13].xID = 496564
+																f1.children[14].xID = 495533
+																f1.children[15].xID = 494252
+																f1.children[16].xID = 343166
+																f1.children[17].xID = 327157
+																f1.children[18].xID = 146907
+																f1.children[19].xID = 120145
+																f1.children[20].xID = 59436
+																foldersTree = gFld('', '')
+																foldersTree.addChildren([f1])
+																foldersTree.treeID = "L1"
+																foldersTree.xID = "bigtree"
+																//-->
+															</script>
+															<script>
+																function op() {
+																};
+																initializeDocument();
+															</script>
+															<div id="folder0" style="display:block; position:block;">
+																<table border="0" cellspacing="0" cellpadding="0" width="100%">
+																	<tbody>
+																		<tr>
+																			<td valign="top">
+																				<a><img id="folderIcon0" name="folderIcon0" src="treeviewflat/ftv2folderopen.gif" border="0"></a>
+																			</td>
+																			<td valign="middle" nowrap="" width="100%">
+																				<a></a>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="portlet light container-events">
+					<div class="portlet-title">
+						<div class="caption">
+							<i class="fa fa-cogs font-green-sharp"></i>
+							<span class="caption-subject font-green-sharp bold uppercase">Events</span>
+						</div>
+					</div>
+					<div class="portlet-body">
+						<div class="periods row">
+							<span class="form-label font-16 pull-left col-md-7">Show items added in the last&nbsp;&nbsp;<input type="number" name="Ehorizon" class="form-control" size="2" maxlength="2" value="30" onchange="javascript:validateEH(this.form)" )="">&nbsp;&nbsp;Days</span>
+						</div>
+						<div class="events">
+							<table class="table table-hover table-striped table-responsive">
+								<tbody>
+									<tr>
+										<td class="SectionBodyText" colspan="3">Fri,&nbsp;March&nbsp;12</td>
+									</tr>
+									<tr>
+										<td align="center">03/12/2021</td>
+										<td align="center">&nbsp;&nbsp;8:00&nbsp;AM</td>
+										<td>
+											<a href="EventDisplay.asp?pkid=881499&amp;community=4418&amp;rec=Y" class="SectionBodyLink">title 1 </a>&nbsp;&nbsp; 
+										</td>
+									</tr>
+									<tr>
+										<td colspan="3">Thu, March&nbsp;18</td>
+									</tr>
+									<tr>
+										<td align="center">03/18/2021</td>
+										<td align="center">4:00&nbsp;PM</td>
+										<td>
+											<a href="EventDisplay.asp?pkid=778087&amp;community=4418&amp;rec=Y" class="SectionBodyLink">Arc Committee Meeting </a>
+											<img src="images/ico_recur.gif" alt="Recurring Event">&nbsp; 
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="group">
+							    <div class="item text">View</div>
+							    <div class="item line"></div>
+							</div>
+							<p>
+								<i class="fas fa-link"></i><a href="FindPetStart.asp" target="Body" class="SectionBodyLink"> Today</a>
+								<i class="fas fa-link"></i><a href="https://www.eunify.net/New/Pay.aspx" target="Body" class="SectionBodyLink"> Week</a>
+								<i class="fas fa-link"></i><a href="http://" target="_nwin" class="SectionBodyLink"> Month</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="portlet light container-classifields">
+					<div class="portlet-title">
+						<div class="caption">
+							<i class="fa fa-cogs font-green-sharp"></i>
+							<span class="caption-subject font-green-sharp bold uppercase">Classifields</span>
+						</div>
+					</div>
+					<div class="portlet-body">
+						<div class="classifields mb-5">
+							<div class="list-group">
+							  <a href="ClassifiedDisplay.asp?pkid=1611&community=4418" class="list-group-item">First field</a>
+							  <a href="ClassifiedDisplay.asp?pkid=1611&community=4418" class="list-group-item">Second field</a>
+							  <a href="ClassifiedDisplay.asp?pkid=1611&community=4418" class="list-group-item">Third field</a>
+							</div>
+						</div>
+						<div>
+							<p>Please enter your search criteria and click Go:</p>
+							<form class="form-horizontal" action="/action_page.php">
+								<input type="hidden" name="ClassifiedCategoryNum" value="0">
+								<div class="form-group">
+									<label class="col-md-3 control-label">Category</label>
+									<div class="col-md-4">
+										<select name="ClassifiedCategoryList" id="ClassifiedCategoryList" class="HomeSearch form-control d-inline-block" size="1" onchange="document.frmClassified.ClassifiedCategoryNum.value = (this.options[this.selectedIndex].value); ">
+											<option value="0" selected="">All</option>
+											<option value="44362">Bikes</option>
+											<option value="19280">Cars for Sale</option>
+											<option value="19240">Misc</option>
+											<option value="32027">more</option>
+											<option value="27339">new</option>
+											<option value="27340">xc</option>
+										</select>
+									</div>
+								</div>
+								<div class="clearfix mb-3"></div>
+								<div class="form-group">
+									<label class="col-md-3 control-label">Search:</label>
+									<div class="col-md-4">
+										<div class="input-group">
+											<input type="text" name="ClassifiedSearchFor" id="ClassifiedSearchFor" class="form-control" placeholder="Search">
+										  	<span class="input-group-btn">
+												<input name="btnClassifiedSearch" type="button" class="btn btn-success" value="Go" onclick="javascript:SearchClassifieds(this.form);">
+											</span>
+										</div>										
+									</div>								  	
+								</div>
+								<div class="clearfix mb-3"></div>
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<div class="portlet light container-eforms">
+					<div class="portlet-title">
+						<div class="caption">
+							<i class="fa fa-cogs font-green-sharp"></i>
+							<span class="caption-subject font-green-sharp bold uppercase">eForms</span>
+						</div>
+					</div>
+					<div class="portlet-body">
+						<div class="eforms">
+							<p>&gt; &nbsp;&nbsp;<a href="FormDisplay.asp?pkid=583" class="SectionBodyLink">Clubhouse request&nbsp;<i fa fa-barcode></i></a></p>
+							<p>&gt; &nbsp;&nbsp;<a href="FormDisplay.asp?pkid=583" class="SectionBodyLink">Event request&nbsp;<i fa fa-barcode></i></a></p>
+							<p>&gt; &nbsp;&nbsp;<a href="FormDisplay.asp?pkid=583" class="SectionBodyLink">Pub Group Form&nbsp;<i fa fa-barcode></i></a></p>
+						</div>
+					</div>
+				</div>
+
+				<div class="portlet light container-slideshow">
+					<div class="portlet-title">
+						<div class="caption">
+							<i class="fa fa-cogs font-green-sharp"></i>
+							<span class="caption-subject font-green-sharp bold uppercase">eForms</span>
+						</div>
+					</div>
+					<div class="portlet-body">
+						<div class="slideshow">
+							<p>&gt; &nbsp;&nbsp;<a href="javascript:TINY.box.show({iframe:'SlideShowDisplay.asp?modal=Y&pkid=60',width:500,height:400})" class="SectionBodyLink">Test 1&nbsp;<i fa fa-barcode></i></a></p>
+							<p>&gt; &nbsp;&nbsp;<a href="javascript:TINY.box.show({iframe:'SlideShowDisplay.asp?modal=Y&pkid=60',width:500,height:400})" class="SectionBodyLink">Test 2&nbsp;<i fa fa-barcode></i></a></p>
+							<p>&gt; &nbsp;&nbsp;<a href="javascript:TINY.box.show({iframe:'SlideShowDisplay.asp?modal=Y&pkid=60',width:500,height:400})" class="SectionBodyLink">Test 3&nbsp;<i fa fa-barcode></i></a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+	<script src="./assets_new/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+	<script src="./assets_new/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="./assets_new/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+	<script src="./assets_new/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+	<script src="./assets_new/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+	<script src="./assets_new/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+	<script src="./assets_new/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+
+	<!-- BEGIN PAGE LEVEL SCRIPTS -->
+	<script src="./assets_new/global/plugins/jstree/dist/jstree.min.js"></script>
+	<script src="./assets_new/global/plugins/moment.min.js"></script>
+	<script src="./assets_new/global/plugins/fullcalendar/fullcalendar.min.js"></script>
+
+    <script type="text/javascript" src="https://abc.eunify.net/JSFunctionFormatParm.js" async></script>
+
+    <script language="JavaScript" src="https://abc.eunify.net/JSUploadUtilities.js" async></script>
+    <script language="JavaScript" src="https://abc.eunify.net/JSLinkInternal.js" async></script>
+
+	<script src="https://abc.eunify.net/Utility_Form.js"></script>
+	<script src="https://abc.eunify.net/JSHome.js"></script>
+	<!-- END PAGE LEVEL SCRIPTS -->
+
+	<script src="./assets_new/global/scripts/metronic.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+
+		var Calendar = function() {
+
+
+		    return {
+		        //main function to initiate the module
+		        init: function() {
+		            Calendar.initCalendar();
+		        },
+
+		        initCalendar: function() {
+
+		            if (!jQuery().fullCalendar) {
+		                return;
+		            }
+
+		            var date = new Date();
+		            var d = date.getDate();
+		            var m = date.getMonth();
+		            var y = date.getFullYear();
+
+		            var h = {};
+
+		            if (Metronic.isRTL()) {
+		                if ($('#calendar').parents(".portlet").width() <= 720) {
+		                    $('#calendar').addClass("mobile");
+		                    h = {
+		                        right: 'title, prev, next',
+		                        center: '',
+		                        left: 'agendaDay, agendaWeek, month, today'
+		                    };
+		                } else {
+		                    $('#calendar').removeClass("mobile");
+		                    h = {
+		                        right: 'title',
+		                        center: '',
+		                        left: 'agendaDay, agendaWeek, month, today, prev,next'
+		                    };
+		                }
+		            } else {
+		                if ($('#calendar').parents(".portlet").width() <= 720) {
+		                    $('#calendar').addClass("mobile");
+		                    h = {
+		                        left: 'title, prev, next',
+		                        center: '',
+		                        right: 'today,month,agendaWeek,agendaDay'
+		                    };
+		                } else {
+		                    $('#calendar').removeClass("mobile");
+		                    h = {
+		                        left: 'title',
+		                        center: '',
+		                        right: 'prev,next,today,month,agendaWeek,agendaDay'
+		                    };
+		                }
+		            }
+
+
+
+
+		            $('#event_add').unbind('click').click(function() {
+		                var title = $('#event_title').val();
+		                addEvent(title);
+		            });
+
+		            $('#calendar').fullCalendar('destroy'); // destroy the calendar
+		            $('#calendar').fullCalendar({ //re-initialize the calendar
+		                header: h,
+		                defaultView: 'month', // change default view with available options from http://arshaw.com/fullcalendar/docs/views/Available_Views/ 
+		                slotMinutes: 15,
+		                editable: false,
+		                droppable: false, // this allows things to be dropped onto the calendar !!!
+		                drop: function(date, allDay) { // this function is called when something is dropped
+
+		                    // retrieve the dropped element's stored Event Object
+		                    var originalEventObject = $(this).data('eventObject');
+		                    // we need to copy it, so that multiple events don't have a reference to the same object
+		                    var copiedEventObject = $.extend({}, originalEventObject);
+
+		                    // assign it the date that was reported
+		                    copiedEventObject.start = date;
+		                    copiedEventObject.allDay = allDay;
+		                    copiedEventObject.className = $(this).attr("data-class");
+
+		                    // render the event on the calendar
+		                    // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+		                    $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+
+		                    // is the "remove after drop" checkbox checked?
+		                    if ($('#drop-remove').is(':checked')) {
+		                        // if so, remove the element from the "Draggable Events" list
+		                        $(this).remove();
+		                    }
+		                },
+		                events: [{//dummy data
+		                    title: 'All Day Event',
+		                    start: new Date(y, m, 1),
+		                    backgroundColor: Metronic.getBrandColor('yellow')
+		                }, {
+		                    title: 'Long Event',
+		                    start: new Date(y, m, d - 5),
+		                    end: new Date(y, m, d - 2),
+		                    backgroundColor: Metronic.getBrandColor('green')
+		                }, {
+		                    title: 'Repeating Event',
+		                    start: new Date(y, m, d - 3, 16, 0),
+		                    allDay: false,
+		                    backgroundColor: Metronic.getBrandColor('red')
+		                }, {
+		                    title: 'Repeating Event',
+		                    start: new Date(y, m, d + 4, 16, 0),
+		                    allDay: false,
+		                    backgroundColor: Metronic.getBrandColor('green')
+		                }, {
+		                    title: 'Meeting',
+		                    start: new Date(y, m, d, 10, 30),
+		                    allDay: false,
+		                }, {
+		                    title: 'Lunch',
+		                    start: new Date(y, m, d, 12, 0),
+		                    end: new Date(y, m, d, 14, 0),
+		                    backgroundColor: Metronic.getBrandColor('grey'),
+		                    allDay: false,
+		                }, {
+		                    title: 'Birthday Party',
+		                    start: new Date(y, m, d + 1, 19, 0),
+		                    end: new Date(y, m, d + 1, 22, 30),
+		                    backgroundColor: Metronic.getBrandColor('purple'),
+		                    allDay: false,
+		                }, {
+		                    title: 'Click for Google',
+		                    start: new Date(y, m, 28),
+		                    end: new Date(y, m, 29),
+		                    backgroundColor: Metronic.getBrandColor('yellow'),
+		                    url: 'http://google.com/',
+		                }]
+		            });
+
+		        }
+
+		    };
+
+		}();
+
+        jQuery(document).ready(function() {
+           // initiate layout and plugins
+           	Metronic.init(); // init metronic core components
+           	// $('.btn-plus').tooltip();
+
+
+           	// UITree.init();
+           	// $('#tree_1').on("select_node.jstree", function (e, data) { data.instance.toggle_node(data.node); });
+           	Calendar.init();
+
+           	$('#btn-search').click(function(){
+		        var str, pos, len, filter, filtername, filtervalue;
+		        var GroupFilter = $('#GroupFilter');
+		        if(GroupFilter.length > 0) {
+		            filtervalue = GroupFilter.val();
+		            pos = filtervalue.indexOf("-");
+		            len = filtervalue.length;
+		            filter = filtervalue.substring(0, pos);
+		            filtername = filtervalue.substring(pos + 1, len);
+		        } else {
+		            filter = "E";
+		            filtername = "Entire";
+		        }
+		        str = "Home.asp" + "?cmd=1&filter=" + filter + "&name=" + filtername + "&SearchType=" + $('#SearchType').val() + "&Search=" + $('#SearchText').val();
+		        document.location.href = str;
+           	})
+
+        });
+    </script>
+</body>
+</html>

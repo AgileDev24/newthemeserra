@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html class="js-focus-visible" data-js-focus-visible>
+<head>
+	<title>Diamond Bay Association</title>
+	<script type="text/javascript" src="https://abc.eunify.net/JSFunctionFormatParm.js" async=""></script>
+	<script language="JavaScript" src="https://abc.eunify.net/JSLinkInternal.js" async=""></script>
+	<script type="text/javascript">
+	    // Don't be framed!
+	    if (parent.frames.length != 0)
+	        top.location = self.document.location;
+
+	    var PopupFileUploading = null;
+	    var MovingMenu = false;
+
+	    function PopupWait() {
+	        if (document.all)
+	            var xMax = screen.width, yMax = screen.height;
+	        else
+	            if (document.layers)
+	                var xMax = window.outerWidth, yMax = window.outerHeight;
+	            else
+	                var xMax = 640, yMax = 480;
+
+	        var xOffset = (xMax - 200) / 2, yOffset = (yMax - 200) / 2;
+
+	        PopupFileUploading = window.open('PopupFileUploading2.asp', 'PopupFileUploading', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,height=150,width=350,screenX=' + xOffset + ',screenY=' + yOffset + ',top=' + yOffset + ',left=' + xOffset + ',copyhistory=copyhistory=no');
+
+	    }
+
+	    function PopupClose() {
+	        if (PopupFileUploading) {
+	            PopupFileUploading.close();
+	        }
+	    }
+
+	    function portalalert(a) {
+	        alert(a)
+	    }
+
+	    function umanagelistener(event) {
+	        if (event.origin != 'https://umanagefromportal.eunify.net') {
+	            return;
+	        }
+	        if (event.data == 'umanage.session.expired') {
+	            window.location.href = "/ResetLogin.asp?Exit=Y";
+	        }
+	    }
+
+	    if (window.addEventListener) {
+	        window.addEventListener("message", umanagelistener);
+	    } else {
+	        // IE8
+	        window.attachEvent("onmessage", umanagelistener);
+	    }
+	</script>
+
+</head>
+
+<frameset cols="250,*" framespacing="0" frameborder="no" id="FrameMain" name="FrameMain">
+	<frame name="Navigation" src="Navigation.html" frameborder="no" style="border-right: 2px solid silver;" id="FrameNav"></frame>
+	<frameset rows="80,*" framespacing="0" frameborder="no" id="FrameMain2" name="FrameMain2">
+		<frame name="Heading" src="Heading.html" marginheight="5" frameborder="0" scrolling="no" width="200" id="Heading"></frame>
+		<frameset rows="5,*" framespacing="0" frameborder="no" id="FrameSubMain" name="FrameSubMain">
+			<frame name="HeaderBar" src="HeaderBar.html" marginheight="2" scrolling="no" id="HeaderBar"></frame>
+			<frame name="Body" src="AnnouncementDisplay.html" frameborder="no" id="FrameBody"></frame>
+		</frameset>
+	</frameset>
+</frameset>
+
+
+<!-- <frameset rows="70,*" framespacing="0" frameborder="no" id="FrameMain" name="FrameMain">
+	<frame name="Heading" src="Heading.html" marginheight="5" frameborder="0" scrolling="no" width="200" id="Heading">
+	</frame>
+	<frameset rows="5,*" framespacing="0" frameborder="no" id="FrameMain2" name="FrameMain2">
+		<frame name="HeaderBar" src="HeaderBar.html" marginheight="2" scrolling="no" id="HeaderBar"></frame>
+		<frameset cols="194,*" id="FrameSubMain" name="FrameSubMain" frameborder="yes" border="5" borercolor="#000000">
+			<frame name="Navigation" src="Navigation.html" frameborder="no" style="border-right: 2px solid silver;" border="5" bordercolor="#FFFFFF" scrolling="auto" id="FrameNav">
+			</frame>
+			<frame name="Body" src="Home.html" frameborder="no" id="FrameBody"></frame>
+		</frameset>
+	</frameset>
+</frameset> -->
+
+</html>

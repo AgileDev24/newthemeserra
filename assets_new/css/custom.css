@@ -761,9 +761,23 @@ p>i{
 }
 
 select::-ms-expand { display: block; }
+
 .nav-item select {
     -webkit-appearance: auto;
-  }
+}
+
+.title-in-table {
+    height: 70px
+}
+
+.border-bottom-grey {
+    border-bottom: solid 1px #d1d1d1;
+}
+
+hr {
+    border-top: 1px solid black;
+}
+
 @media (max-width: 768px){
     .container-home .circle-icon{
         font-size: 2vw;

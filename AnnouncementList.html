@@ -49,7 +49,7 @@
                 <p class="title-desc"><i class="fa fa-info-circle text-warning"></i> &nbsp;Use this page to search for Community News..</p>
             </div>
 
-            <div class="container-top-btns card">
+<!--             <div class="container-top-btns card">
 
                 <div class="row">
                     <div class="col-md-6 text-left">
@@ -105,6 +105,29 @@
                     </div>
                 </div>
 
+            </div> -->
+
+            <div class="container-top-btns card">
+                <div class="row">
+                    <div class="col-md-6 text-left">
+                        <button onclick="javascript:TINY.box.show({iframe:'AnnouncementEdit2.asp?Modal=Y&amp;durl=AnnouncementList.asp',width:800,height:600})" class="btn btn-labeled btn-light">
+                            <span class="btn-label"><i class="fas fa-plus-circle"></i></span>Add New: Announcements
+                        </button>
+                        <button onclick="javascript:TINY.box.show({iframe:'CategoryEdit.asp?Modal=Y&amp;ModalRefresh=N&amp;type=Announcement&amp;title=Announcements',width:600,height:500})" class="btn btn-labeled btn-light">
+                            <span class="btn-label"><i class="fas fa-list-ol"></i></span>Edit&nbsp;Categories: Announcements
+                        </button>
+                        <button onclick="setBody('home2.asp')" class="btn btn-labeled btn-light">
+                            <span class="btn-label"><i class="fas fa-home"></i></span>Home
+                        </button>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <!-- <button class="btn btn-primary btn-round mgl-15"><i class="fas fa-search"></i></button> -->
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="SearchText" name="SearchText" placeholder="Search..." value="" size="10">
+                            <button class="btn btn-primary pdlr-30 mgl-15" id="btn-search">GO</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="container-table card">
@@ -259,24 +282,27 @@
                 "bStateSave": true, // save datatable state(pagination, sort, etc) in cookie.
 
                 "columns": [{
-                    "orderable": true
-                }, {
-                    "orderable": true
-                }, {
-                    "orderable": true
-                }, {
-                    "orderable": true
-                }, {
-                    "orderable": true
-                }, {
-                    "orderable": true
-                }, {
-                    "orderable": true
+                    "orderable": false
                 }, {
                     "orderable": false
                 }, {
                     "orderable": false
-                }],
+                }, {
+                    "orderable": true
+                }, {
+                    "orderable": true
+                }, {
+                    "orderable": true
+                }, {
+                    "orderable": true
+                }, {
+                    "orderable": true
+                }, {
+                    "orderable": true
+                }, {
+                    "orderable": true
+                }
+                ],
                 "lengthMenu": [
                     [5, 15, 20, -1],
                     [5, 15, 20, "All"] // change per page values here
